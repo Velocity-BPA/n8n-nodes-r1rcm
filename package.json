@@ -1,0 +1,110 @@
+{
+  "name": "n8n-nodes-r1rcm",
+  "version": "1.0.0",
+  "description": "A comprehensive n8n community node for R1 RCM revenue cycle management providing 22 resources and 200+ operations for patient access, eligibility, claims, denials, payments, and intelligent automation. Includes Epic EHR integration.",
+  "license": "BUSL-1.1",
+  "author": {
+    "name": "Velocity BPA",
+    "email": "licensing@velobpa.com",
+    "url": "https://velobpa.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-r1rcm.git"
+  },
+  "homepage": "https://github.com/Velocity-BPA/n8n-nodes-r1rcm#readme",
+  "bugs": {
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-r1rcm/issues"
+  },
+  "keywords": [
+    "n8n",
+    "n8n-community-node-package",
+    "r1rcm",
+    "r1-rcm",
+    "revenue-cycle",
+    "rcm",
+    "healthcare",
+    "medical-billing",
+    "claims",
+    "eligibility",
+    "prior-authorization",
+    "denials",
+    "payment-posting",
+    "epic",
+    "ehr",
+    "hipaa",
+    "edi",
+    "837",
+    "835",
+    "270",
+    "271",
+    "276",
+    "277",
+    "patient-access",
+    "financial-clearance",
+    "charge-capture",
+    "coding",
+    "ar-management"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/R1RcmApi.credentials.js",
+      "dist/credentials/R1RcmIntegration.credentials.js",
+      "dist/credentials/R1RcmSftp.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/R1Rcm/R1Rcm.node.js",
+      "dist/nodes/R1Rcm/R1RcmTrigger.node.js"
+    ]
+  },
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier --write \"**/*.ts\"",
+    "test": "jest",
+    "test:unit": "jest --testPathPattern=test/unit",
+    "test:integration": "jest --testPathPattern=test/integration",
+    "test:coverage": "jest --coverage",
+    "clean": "rimraf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "ssh2-sftp-client": "^9.1.0",
+    "xml2js": "^0.6.2",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.11",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/node": "^20.10.5",
+    "@types/ssh2-sftp-client": "^9.0.3",
+    "@types/xml2js": "^0.4.14",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-n8n-nodes-base": "^1.16.1",
+    "gulp": "^4.0.2",
+    "jest": "^29.7.0",
+    "n8n-workflow": "^1.22.0",
+    "prettier": "^3.1.1",
+    "rimraf": "^5.0.5",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "n8n-workflow": ">=1.0.0"
+  }
+}

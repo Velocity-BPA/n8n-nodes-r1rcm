@@ -1,0 +1,43 @@
+# Source files (TypeScript)
+credentials/**/*.ts
+nodes/**/*.ts
+index.ts
+tsconfig.json
+
+# Test files
+test/
+*.test.ts
+*.spec.ts
+coverage/
+jest.config.js
+
+# Development config
+.eslintrc.js
+.prettierrc
+.editorconfig
+
+# IDE
+.idea/
+.vscode/
+
+# Git
+.git/
+.gitignore
+
+# Documentation source
+docs/
+
+# Scripts
+scripts/
+
+# Temp files
+*.log
+*.tmp
+.cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment
+.env*
